@@ -201,7 +201,7 @@ Template Name: Home
                                             <span>8(985) 115-20-45</span>
                                         </div>
                                         <a href="tel:+79851152045" class="in9-contacts__btn in9-btn_w">Позвонить
-                                            жениху</a>
+                                            невесте</a>
                                     </div>
                                 </div>
                             </div>
