@@ -113,9 +113,9 @@ else {
 // Предпочтения по алкоголю
 $drinkInput = $_POST['form-drinks'] ?? null; // Используем оператор нулевого слияния для предотвращения ошибки
 if ($drinkInput === 'white') {
-    $drink = "Виное белое";
+    $drink = "Вино белое";
 } elseif ($drinkInput === 'red') {
-    $drink = "Винок красное";
+    $drink = "Вино красное";
 } elseif ($drinkInput === 'vodka') {
     $drink = "Водка";
 } elseif ($drinkInput === 'cognac') {
