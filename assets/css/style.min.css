@@ -885,7 +885,7 @@ ol.counter li:before {
 
 @media (max-width: 767.98px) {
   .in9-page__bg {
-    background: url("../img/bg-min.jpg") center/cover no-repeat;
+    background: url("../img/bg-mi.jpg") center/cover no-repeat;
   }
 }
 @media (max-width: 479.98px) {
@@ -895,7 +895,7 @@ ol.counter li:before {
 }
 @media (max-width: 500px) {
   .in9-page__bg {
-    background: url("../img/bg-min-min.jpg") center/cover no-repeat;
+    background: url("../img/bg-mi-mi.jpg") center/cover no-repeat;
   }
 }
 .in9-page__title {
