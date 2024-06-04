@@ -260,7 +260,7 @@ Template Name: Home
                                 <input type="text" name="form-phone" placeholder="Ваш номер телефона." data-value=""
                                     class="in9-form-input _phone _req">
                             </div>
-                            <div class="in9-form__subtitle">В каком количестве вы прийдете на торжество?</div>
+                            <div class="in9-form__subtitle">В каком количестве вы придете на торжество?</div>
                             <div class="in9-form__item">
                                 <label for="adults" class="in9-radio__other">Взрослые
                                     <textarea name="old" data-value="Ваше пожелание" class="in9-survey-others _digital"

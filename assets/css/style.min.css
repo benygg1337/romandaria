@@ -882,6 +882,7 @@ ol.counter li:before {
     bottom: -70%;
   }
 }
+
 @media (max-width: 767.98px) {
   .in9-page__bg {
     background: url("../img/bg-min.jpg") center/cover no-repeat;
@@ -890,6 +891,11 @@ ol.counter li:before {
 @media (max-width: 479.98px) {
   .in9-page__bg:after {
     width: 180%;
+  }
+}
+@media (max-width: 500px) {
+  .in9-page__bg {
+    background: url("../img/bg-min-min.jpg") center/cover no-repeat;
   }
 }
 .in9-page__title {
@@ -1662,7 +1668,7 @@ ol.counter li:before {
 }
 @media (max-width: 767.98px) {
   .in9-questions__subtitle {
-    margin: 0px 0px 6px 0px;
+    margin: 30px 0px 6px 0px;
   }
 }
 .in9-questions__text {
