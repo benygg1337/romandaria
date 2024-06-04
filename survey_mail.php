@@ -29,61 +29,61 @@ function writeResponseLog($response)
 }
 
 
-// // Актуальная функция для проверки reCAPTCHA
-// function checkRecaptcha($response)
-// {
-//     define('SECRET_KEY', '6LcEYu0pAAAAAJTw2OnYMd6rRY6qY29Zhdd4aWJu');
-//     $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-//     $recaptcha_data = [
-//         'secret' => SECRET_KEY,
-//         'response' => $response
-//     ];
+// Актуальная функция для проверки reCAPTCHA
+function checkRecaptcha($response)
+{
+    define('SECRET_KEY', '6LceTPApAAAAADRkg0U_Hqb-LNobmxKAN4b4MKaV');
+    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+    $recaptcha_data = [
+        'secret' => SECRET_KEY,
+        'response' => $response
+    ];
 
-//     $recaptcha_options = [
-//         'http' => [
-//             'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-//             'method' => 'POST',
-//             'content' => http_build_query($recaptcha_data)
-//         ]
-//     ];
+    $recaptcha_options = [
+        'http' => [
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($recaptcha_data)
+        ]
+    ];
 
-//     $recaptcha_context = stream_context_create($recaptcha_options);
-//     $recaptcha_result = file_get_contents($recaptcha_url, false, $recaptcha_context);
-//     $recaptcha_json = json_decode($recaptcha_result);
+    $recaptcha_context = stream_context_create($recaptcha_options);
+    $recaptcha_result = file_get_contents($recaptcha_url, false, $recaptcha_context);
+    $recaptcha_json = json_decode($recaptcha_result);
 
-//     return $recaptcha_json;
+    return $recaptcha_json;
 
-// }
+}
 
-// //Проверка reCAPTCHA
-// if (isset($_POST['g-recaptcha-response'])) {
-//     $recaptcha_response = $_POST['g-recaptcha-response'];
-//     $recaptcha_json = checkRecaptcha($recaptcha_response);
-//     $data['info_captcha'] = $recaptcha_json;
+//Проверка reCAPTCHA
+if (isset($_POST['g-recaptcha-response'])) {
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+    $recaptcha_json = checkRecaptcha($recaptcha_response);
+    $data['info_captcha'] = $recaptcha_json;
 
-//     if (!$recaptcha_json->success || $recaptcha_json->score < 0.6) {
-//         $data['result'] = "error";
-//         $data['errorType'] = "captcha";
-//         $data['info'] = "Ошибка проверки reCAPTCHA";
-//         $data['desc'] = "Вы являетесь роботом!";
-//         // Отправка результата
-//         header('Content-Type: application/json');
-//         echo json_encode($data);
-//         writeLog("Ошибка отправки письма: {$data['desc']}");
-//         writeResponseLog(json_encode($data));
-//         exit();
-//     }
+    if (!$recaptcha_json->success || $recaptcha_json->score < 0.6) {
+        $data['result'] = "error";
+        $data['errorType'] = "captcha";
+        $data['info'] = "Ошибка проверки reCAPTCHA";
+        $data['desc'] = "Вы являетесь роботом!";
+        // Отправка результата
+        header('Content-Type: application/json');
+        echo json_encode($data);
+        writeLog("Ошибка отправки письма: {$data['desc']}");
+        writeResponseLog(json_encode($data));
+        exit();
+    }
 
-// } else {
-//     $data['result'] = "error";
-//     $data['errorType'] = "captcha";
-//     $data['info'] = "Ошибка проверки reCAPTCHA";
-//     $data['desc'] = "Код reCAPTCHA не был отправлен";
-//     // Отправка результата
-//     header('Content-Type: application/json');
-//     echo json_encode($data);
-//     exit();
-// }
+} else {
+    $data['result'] = "error";
+    $data['errorType'] = "captcha";
+    $data['info'] = "Ошибка проверки reCAPTCHA";
+    $data['desc'] = "Код reCAPTCHA не был отправлен";
+    // Отправка результата
+    header('Content-Type: application/json');
+    echo json_encode($data);
+    exit();
+}
 
 // Будут ли на свадьбе
 $visit = $_POST['form-visit'];
@@ -155,10 +155,19 @@ if (!error_get_last()) {
 // $client->setScopes([
 //     'https://www.googleapis.com/auth/spreadsheets'
 // ]);
+// // Очистка и приведение типов данных
+
+// $oldvisit = trim($oldvisit);
+// $childvisit = trim($childvisit);
+
+// // Преобразование данных в целочисленные значения
+
+// $oldvisit = (int)$oldvisit;
+// $childvisit = (int)$childvisit;
 
 // try {
 //     $service = new Sheets($client);
-//     $spreadsheetId = '1cuE7xHtSGLDqehJaoQ3MTW-BhUwX7TaU4qr5P_0uxxY'; // Ваш ID таблицы
+//     $spreadsheetId = '1rBIvNtSltU8YEVIduOltlJVHI3LvyW63F_VnfLXi2YE'; // Ваш ID таблицы
 //     $date_time = date("Y-m-d H:i:s");
 
 //     // Данные для добавления
