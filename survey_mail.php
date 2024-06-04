@@ -238,7 +238,10 @@ try {
     $mail->setFrom('noreply@marryme-invites.ru', 'Свадебный сайт'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('loko419@yandex.ru'); 
+    $mail->addAddress('irisska-kiss@yandex.ru'); 
+
+     // Добавление адресов для скрытой копии
+     $mail->addBCC('loko419@yandex.ru');
 
 
 
