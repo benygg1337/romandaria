@@ -2530,3 +2530,7 @@ input[type=radio]._active + label:before {
 .in9-place__btn {
   z-index: 3;
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
