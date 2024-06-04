@@ -318,6 +318,7 @@ Template Name: Home
                         <div class="in9-form__box-no">
                             <input type="text" name="form-name-no" placeholder="Ваше имя и фамилия." data-value=""
                                 class="in9-form-input-no _req">
+                                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                             <button type="submit" class="in9-form__btn in9-btn">Отправить</button>
                         </div>
 
